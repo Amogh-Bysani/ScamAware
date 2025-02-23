@@ -59,11 +59,11 @@ function ScamDetection() {
       messages: [
         {
           role: "system",
-          content: `You are an AI that analyzes emails for trustworthiness. Please use the following context to improve your response: ${relevantContext}`
+          content: `You are an AI that analyzes emails and messages (text, dms, etc) for trustworthiness. Please use the following context to improve your response: ${relevantContext}`
         },
         {
           role: "user",
-          content: `Here is an image of an email. Please analyze it and provide a trustworthiness rating (1-10) and an explanation. You must follow directions given in the context. The output should be in this JSON format:
+          content: `Here is an image of an email or message. Please analyze it and provide a trustworthiness rating (1-10) and an explanation. You must follow directions given in the context. The output should be in this JSON format:
             {
               "trustworthiness": int,
               "explanation": string
@@ -117,7 +117,7 @@ function ScamDetection() {
   
 
   // Analyze Email Image
-  async function analyzeEmailImage() {
+  async function analyzeImage() {
     if (!image) {
       alert("Please upload an image first.");
       return;
@@ -132,7 +132,7 @@ function ScamDetection() {
       setTrustRating(response.trustworthiness);
       setExplanation(response.explanation);
     } catch (error) {
-      console.error("Error analyzing email:", error);
+      console.error("Error analyzing:", error);
       setFetchError(true);
     } finally {
       setLoading(false);
@@ -146,15 +146,15 @@ function ScamDetection() {
       <input type="file" accept="image/png, image/jpeg, image/webp" onChange={(e) => handleImageUpload(e.target.files[0])} className="mt-2" />
 
       <button
-        onClick={analyzeEmailImage}
+        onClick={analyzeImage}
         disabled={loading}
         className="bg-blue-500 text-white px-4 py-2 rounded mt-2 disabled:opacity-50"
       >
-        Analyze Email
+        Analyze
       </button>
 
-      {loading && <p>Analyzing email...</p>}
-      {fetchError && <p>Error analyzing email! :(</p>}
+      {loading && <p>Analyzing...</p>}
+      {fetchError && <p>Error analyzing email or message! :(</p>}
 
       {trustRating !== null && (
         <div className="mt-4 p-4 bg-gray-100 rounded">
