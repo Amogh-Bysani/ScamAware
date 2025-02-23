@@ -15,7 +15,7 @@ export default function Home() {
           <div className="flex justify-center items-center gap-4 mb-8">
             <Shield className="w-16 h-16 text-purple-400 animate-pulse" />
             <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-500">
-              ScamShield
+              ScamAware
             </h1>
           </div>
           <p className="text-lg md:text-xl text-purple-200/80 max-w-2xl mx-auto mb-8">
@@ -98,7 +98,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <Shield className="w-6 h-6 text-purple-400" />
-            <span className="font-semibold text-purple-200">ScamShield</span>
+            <span className="font-semibold text-purple-200">ScamAware</span>
           </div>
           <div className="flex gap-6">
             <a href="#" className="text-purple-200/70 hover:text-purple-200">About</a>
