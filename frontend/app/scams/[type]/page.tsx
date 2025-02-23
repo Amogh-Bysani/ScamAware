@@ -106,10 +106,12 @@ export default function ScamTypePage({ params }: { params: { type: string } }) {
           </div>
 
           <div className="mt-12">
-            <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
-              <AlertTriangle className="mr-2 h-5 w-5" />
-              Report a Scam
-            </Button>
+            <Link href="/helpdesk">
+              <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
+                <AlertTriangle className="mr-2 h-5 w-5" />
+                Report a Scam
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
