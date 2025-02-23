@@ -19,15 +19,23 @@ export default function ScamDetectionPage() {
                         </h1>
                     </div>
                     <p className="text-lg md:text-xl text-purple-200/80 max-w-2xl mx-auto mb-8">
-                        Submit a screenshot of any suspicious activity and have our AI system analyze its scam likeliness.
+                        Submit a screenshot of any suspicious activity and have our AI system analyze its scam-likeliness.
                     </p>
                     <div className="flex gap-4 justify-center flex-wrap">
-                        <Link href="/scams">
+                        <Link href="/link-scam">
                             <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
-                                Start Learning
+                                Scam Link Checker
                             </Button>
                         </Link>
                     </div>
+                    <div className="flex gap-4 justify-center flex-wrap">
+                        <Link href="/">
+                            <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
+                                Home
+                            </Button>
+                        </Link>
+                    </div>
+
                 </div>
             </section>
 
