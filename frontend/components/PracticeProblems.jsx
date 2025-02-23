@@ -16,8 +16,8 @@ function PracticeProblems() {
     const [totalCount, setTotalCount] = useState(0);
     const [attempted, setAttempted] = useState(false);
 
-    const questionType = 1;
-    const questionDifficulty = 3;
+    const questionType = 2;
+    const questionDifficulty = 1;
     const TEMP = 1.3;
 
     const [practiceQ, setPracticeQ] = useState({
@@ -52,8 +52,11 @@ function PracticeProblems() {
         setSubmitted(false);
         setAttempted(false);
 
+        const randomQuestionType = Math.floor(Math.random() * 3); // Generates 0, 1, or 2
+        const dynamicDifficulty = (correctCount % 5 > 2) ? 3 : ((correctCount % 5) + 1);
+
         try {
-            let response = await fetchResponse(questionTopic, questionType, questionDifficulty, TEMP);
+            let response = await fetchResponse(questionTopic, randomQuestionType, dynamicDifficulty, TEMP);
 
             setPracticeQ({
                 askingQuestion: response.askingQuestion,
@@ -68,6 +71,7 @@ function PracticeProblems() {
             setLoading(false);
         }
     }
+
 
     /* handle answers */
 
