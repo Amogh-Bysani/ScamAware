@@ -2,9 +2,7 @@ import { useState } from 'react'
 import './PracticeProblems.css'
 
 const API_URL = 'https://api.openai.com/v1/chat/completions';
-
-require('dotenv').config();  
-const apiKey = process.env.API_KEY;
+const API_KEY = "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";
 
 function PracticeProblems() {
 
