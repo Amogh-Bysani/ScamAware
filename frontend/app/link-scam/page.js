@@ -21,13 +21,18 @@ export default function LinkCheckPage() {
                     <p className="text-lg md:text-xl text-purple-200/80 max-w-2xl mx-auto mb-8">
                         Analyze whether a suspicious link is likely to be a scam or not.
                     </p>
-                    <div className="flex gap-4 justify-center flex-wrap">
-                        <Link href="/scams">
-                            <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
-                                Start Learning
-                            </Button>
+                      <div className="flex gap-4 justify-center flex-wrap">
+                        <Link href="/">
+                          <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
+                            Back to Home
+                          </Button>
                         </Link>
-                    </div>
+                        <Link href="/scam-detection">
+                          <Button size="lg" variant="outline" className="border-purple-400 text-purple-400 hover:bg-purple-400/10">
+                            Scam Detector
+                          </Button>
+                        </Link>
+                      </div>
                 </div>
             </section>
 
