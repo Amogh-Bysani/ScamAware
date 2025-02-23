@@ -96,7 +96,7 @@ function PracticeProblems() {
     return (
         <div className="bg-white shadow-md rounded-lg p-8 m-auto max-w-lg">
             <button
-                onClick={() => window.location.href = 'your_target_url_here'}
+                onClick={() => window.location.href = '/'}
                 className="bg-gray-500 text-white px-4 py-2 rounded mb-2"
             >
                 Back
