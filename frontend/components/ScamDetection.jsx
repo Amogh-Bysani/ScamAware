@@ -74,7 +74,7 @@ function ScamDetection() {
           content: [
             {
               type: "text",
-              text: "Analyze this email for trustworthiness."
+              text: "Analyze this email or message for trustworthiness."
             },
             {
               type: "image_url",
