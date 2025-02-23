@@ -1,6 +1,6 @@
 'use client';
 
-import PracticeProblems from '@/components/PracticeProblems';
+import LinkScam from '@/components/LinkScam';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Shield, BookOpen } from 'lucide-react';
@@ -33,7 +33,7 @@ export default function PracticePage() {
 
             {/* Main Practice Problems */}
             <section className="py-16 px-4 max-w-7xl mx-auto">
-                <PracticeProblems />
+                <LinkScam />
             </section>
 
             {/* Footer */}
