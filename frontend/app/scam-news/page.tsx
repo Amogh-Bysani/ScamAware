@@ -38,22 +38,29 @@ export default function ScamNewsPage() {
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
                 <h1 className="text-4xl font-bold text-center mb-6 flex justify-center items-center gap-3">
-                    <Newspaper className="w-10 h-10 text-purple-400" />
+                    <Newspaper className="w-10 h-10 text-purple-400"/>
                     Scam News & Alerts
                 </h1>
                 <p className="text-lg text-muted-foreground text-center mb-10">
                     Stay updated on the latest scam trends and fraud alerts from trusted sources.
                 </p>
-
+                <div className="flex gap-4 justify-center flex-wrap">
+                    <Link href="/">
+                        <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
+                            Back to Home
+                        </Button>
+                    </Link>
+                </div>
                 {/* Loading State */}
                 {loading ? (
                     <div className="flex justify-center items-center">
-                        <Loader className="animate-spin w-8 h-8 text-muted-foreground" />
+                        <Loader className="animate-spin w-8 h-8 text-muted-foreground"/>
                     </div>
                 ) : (
                     <div className="grid gap-6">
                         {news.map((article, index) => (
-                            <Card key={index} className="p-6 border-purple-500/30 hover:shadow-lg transition-all bg-black/40 backdrop-blur">
+                            <Card key={index}
+                                  className="p-6 border-purple-500/30 hover:shadow-lg transition-all bg-black/40 backdrop-blur">
                                 {/* Article Image (if available) */}
                                 {article.image && (
                                     <img
@@ -71,11 +78,12 @@ export default function ScamNewsPage() {
                                 {/* Read More Button */}
                                 <div className="mt-4 flex justify-between items-center">
                                     <Link href={article.link} target="_blank">
-                                        <Button variant="outline" className="border-purple-400 text-purple-400 hover:bg-purple-500/10">
+                                        <Button variant="outline"
+                                                className="border-purple-400 text-purple-400 hover:bg-purple-500/10">
                                             Read More
                                         </Button>
                                     </Link>
-                                    <Globe className="w-6 h-6 text-purple-400" />
+                                    <Globe className="w-6 h-6 text-purple-400"/>
                                 </div>
                             </Card>
                         ))}
