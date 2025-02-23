@@ -1,9 +1,9 @@
 'use client';
 
-import { Shield, BookOpen, Target, Users, AlertTriangle, Brain } from 'lucide-react';
+import { Shield, BookOpen, Target, Users, AlertTriangle, Brain, ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -21,13 +21,15 @@ export default function Home() {
           <p className="text-lg md:text-xl text-purple-200/80 max-w-2xl mx-auto mb-8">
             Your trusted companion in the fight against online scams. Learn, practice, and stay protected.
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex gap-4 justify-center flex-wrap">
             <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
               Get Started
             </Button>
-            <Button size="lg" variant="outline" className="border-purple-400 text-purple-400 hover:bg-purple-400/10">
-              Learn More
-            </Button>
+            <Link href="/scams">
+              <Button size="lg" variant="outline" className="border-purple-400 text-purple-400 hover:bg-purple-400/10">
+                Learn About Scams
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -40,7 +42,9 @@ export default function Home() {
           <p className="text-muted-foreground mb-4">
             Master scam detection through engaging lessons and real-world scenarios.
           </p>
-          <Button variant="outline" className="w-full border-purple-500/50 hover:bg-purple-500/10">Start Learning</Button>
+          <Link href="/scams">
+            <Button variant="outline" className="w-full border-purple-500/50 hover:bg-purple-500/10">Start Learning</Button>
+          </Link>
         </Card>
 
         <Card className="p-6 bg-card/50 backdrop-blur border-cyan-500/20 hover:border-cyan-500/40 transition-all hover:scale-[1.02]">
@@ -63,24 +67,24 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 bg-[linear-gradient(45deg,#1a0f2e/50,#2d1b4e/50)]">
+      <section className="py-16 px-4 bg-[linear-gradient(45deg,#0a0418,#1a0f2e)]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-purple-200">Key Features</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="flex items-start gap-4 p-6 rounded-lg bg-black/30 backdrop-blur border border-purple-500/20">
-              <AlertTriangle className="w-8 h-8 text-purple-400 flex-shrink-0" />
+            <div className="group flex items-start gap-4 p-6 rounded-lg bg-black/40 backdrop-blur border border-purple-500/20 transition-all duration-300 hover:bg-black/60 hover:border-purple-500/40 hover:transform hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(168,85,247,0.15)]">
+              <AlertTriangle className="w-8 h-8 text-purple-400 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:text-purple-300" />
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-purple-200">Scam Detection Tool</h3>
-                <p className="text-purple-200/70">
+                <h3 className="text-xl font-semibold mb-2 text-purple-200 transition-colors duration-300 group-hover:text-purple-100">Scam Detection Tool</h3>
+                <p className="text-purple-200/70 transition-colors duration-300 group-hover:text-purple-200">
                   Advanced AI-powered analysis of suspicious messages and links.
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-4 p-6 rounded-lg bg-black/30 backdrop-blur border border-cyan-500/20">
-              <Brain className="w-8 h-8 text-cyan-400 flex-shrink-0" />
+            <div className="group flex items-start gap-4 p-6 rounded-lg bg-black/40 backdrop-blur border border-cyan-500/20 transition-all duration-300 hover:bg-black/60 hover:border-cyan-500/40 hover:transform hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(34,211,238,0.15)]">
+              <Brain className="w-8 h-8 text-cyan-400 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:text-cyan-300" />
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-cyan-200">Interactive Tutorials</h3>
-                <p className="text-cyan-200/70">
+                <h3 className="text-xl font-semibold mb-2 text-cyan-200 transition-colors duration-300 group-hover:text-cyan-100">Interactive Tutorials</h3>
+                <p className="text-cyan-200/70 transition-colors duration-300 group-hover:text-cyan-200">
                   Engaging, scenario-based learning covering various scam types.
                 </p>
               </div>
